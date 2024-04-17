@@ -8,7 +8,7 @@ const userRoutes = require('./routes/userRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 8080;
-const MONGO_URI = process.env.MONGO_URI || "mongodb+srv://cloud:0YsOYJne8WL2aTBJ@serverlessinstance0.cys2vnq.mongodb.net/aistudio"
+const MONGO_URI = process.env.MONGO_URI || "mongodb+srv://cloud:0YsOYJne8WL2aTBJ@serverlessinstance0.cys2vnq.mongodb.net/?retryWrites=true&w=majority&appName=ServerlessInstance0"
 
 // Middlewares
 app.use(cors());
