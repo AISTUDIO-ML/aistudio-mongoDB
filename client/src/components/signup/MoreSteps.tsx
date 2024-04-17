@@ -53,10 +53,9 @@ const MoreSteps: React.FC<MoreStepsProps> = ({
       onSubmit: (values) => {
         setCollectedData({ ...collectedData, ...values });
         console.log("Collected Data", { ...collectedData, ...values });
-
         // Create User
         setLoading(true);
-        fetch(`${process.env.SERVER_ADDRESS}/users/signup`, {
+        fetch(`${process.env.REACT_APP_API_URL}/users/signup`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

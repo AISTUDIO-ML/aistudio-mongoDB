@@ -8,12 +8,12 @@ exports.login = async (req, res) => {
         if (!user) {
             return res.status(401).json({ message: "User Not Found" });
         }
-
         const isMatch = await user.matchPassword(password);
         if (!isMatch) {
-            return res.status(401).json({ message: "Invalid Credentials" });
+          return res.status(401).json({ message: "Invalid Credentials" });
         }
-
+        
+        console.log(process.env.JWT_SECRET)
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
         res.json({ token });
     } catch (error) {

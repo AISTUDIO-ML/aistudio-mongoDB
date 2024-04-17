@@ -9,7 +9,7 @@ const userRoutes = require('./routes/userRoutes');
 const app = express();
 
 const PORT = process.env.PORT || 8080;
-const MONGO_URI = process.env.MONGO_URI || "mongodb+srv://tj905837:hXH68brXRc0QoYyi@aistudio.pkmenaj.mongodb.net/"
+const MONGO_URI = process.env.MONGO_URI || ""
 
 // Middlewares
 app.use(cors());
