@@ -9,7 +9,7 @@ import HoneyPotz from "../HoneyPotz";
 function Hosting() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <section className="main">
         <div className="row">
           <div className="col">

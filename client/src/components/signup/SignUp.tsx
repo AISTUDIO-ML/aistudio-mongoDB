@@ -17,7 +17,7 @@ function SignUp() {
   useEffect(() => {
     $("input#space").on({
       keydown: function (e: any) {
-        if (e.which === 32) return false;
+        // if (e.which === 32) return false;
       },
       change: function (e: any) {
         const inputElement = e.target as HTMLInputElement;

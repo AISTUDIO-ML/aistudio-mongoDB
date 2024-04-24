@@ -8,6 +8,8 @@ import $ from "jquery";
 import HoneyPotz from "../HoneyPotz";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { auth } from "../../firebase";
+import { createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth';
 
 interface MoreStepsProps {
   collectedData: any;
@@ -27,7 +29,7 @@ const MoreSteps: React.FC<MoreStepsProps> = ({
   useEffect(() => {
     $("input#space").on({
       keydown: function (e: any) {
-        if (e.which === 32) return false;
+        // if (e.which === 32) return false;
       },
       change: function (e: any) {
         const inputElement = e.target as HTMLInputElement;
@@ -50,11 +52,16 @@ const MoreSteps: React.FC<MoreStepsProps> = ({
       validationSchema: MoreStepSchema,
 
       // If we hit the Login Button, the value provided by user will be stored in "values"
-      onSubmit: (values) => {
+      onSubmit: async (values) => {
         setCollectedData({ ...collectedData, ...values });
         console.log("Collected Data", { ...collectedData, ...values });
         // Create User
         setLoading(true);
+        try {
+        const userCredential = await createUserWithEmailAndPassword(auth, collectedData.email, collectedData.password);
+        console.log("++++++++++++++++", userCredential)
+        // alert(userCredential)
+        await sendEmailVerification(userCredential.user);
         fetch(`${process.env.REACT_APP_API_URL}/users/signup`, {
           method: "POST",
           headers: {
@@ -77,7 +84,9 @@ const MoreSteps: React.FC<MoreStepsProps> = ({
               return toast.error(data.message);
             }
             toast.success("User Created Successfully Please Verify Your Email");
-            navigate("/");
+
+            alert('Verification email sent. Please check your email to verify your account.');
+            navigate("/verify/:token");
           })
           .catch((err) => {
             toast.error("User Creation Failed");
@@ -86,6 +95,10 @@ const MoreSteps: React.FC<MoreStepsProps> = ({
           .finally(() => {
             setLoading(false);
           });
+        } catch (error: any) {
+          console.error("Failed to create user and send verification email", error);
+          toast.error("Registration failed: " + error.message);
+        }
       },
     });
 

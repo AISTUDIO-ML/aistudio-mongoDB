@@ -38,7 +38,7 @@ function App() {
         ) : (
           <Routes>
             <Route path="/" element={<Hosting />} />
-            <Route path="/signup" element={<SignUp />} />
+            {/* <Route path="/signup" element={<SignUp />} /> */}
             <Route path="/checkout" element={<PricingTable />} />
             <Route
               path="*"
