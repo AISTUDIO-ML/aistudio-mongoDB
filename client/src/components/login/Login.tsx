@@ -160,10 +160,10 @@ const Login = () => {
                   Log In
                 </button>
                 <div className="my-4 text-center text-md-left">
-                  <div>
-                    <GoogleSignIn/>
-                    <GithubSignIn/>
-                    <MicrosoftSignIn/>
+                  <div className="flex gap-2 flex-wrap justify-center items-center">
+                    <GoogleSignIn />
+                    <GithubSignIn />
+                    <MicrosoftSignIn />
                     <FaUserTie size={23} className="social-icons" />
                     <BsFillShieldLockFill size={23} className="social-icons" />
                   </div>

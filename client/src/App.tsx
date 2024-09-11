@@ -12,6 +12,8 @@ import Google from "./components/socialPages/Google";
 import Github from "./components/socialPages/Github";
 import Microsoft from "./components/socialPages/Microsoft";
 import VerifyEmail from "./components/verify/VerifyEmail";
+import AuthLayout from "./components/layouts/AuthLayout";
+import ProtectedRoute from "./router/ProtectedRoute";
 
 function App() {
   const user = useUserStore((state: any) => state.user);
@@ -19,9 +21,10 @@ function App() {
   return (
     <div className="container">
       <Router>
-        {!user ? (
-          <Routes>
-            <Route path="/" element={<Login />} />
+        <Routes>
+          {/* Auth Routes */}
+          <Route element={<AuthLayout />}>
+            <Route path="/signin" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/forgot-password" element={<ForgotLink />} />
             <Route path="/reset-password/:token" element={<ResetPassword />} />
@@ -34,18 +37,20 @@ function App() {
               path="*"
               element={<h1 className="text-center my-5">Page Not Found!</h1>}
             />
-          </Routes>
-        ) : (
-          <Routes>
+          </Route>
+
+          {/* Logged in Routes */}
+          <Route element={<ProtectedRoute />}>
             <Route path="/" element={<Hosting />} />
-            {/* <Route path="/signup" element={<SignUp />} /> */}
+
             <Route path="/checkout" element={<PricingTable />} />
             <Route
               path="*"
               element={<h1 className="text-center my-5">Page Not Found!</h1>}
             />
-          </Routes>
-        )}
+          </Route>
+        </Routes>
+      
       </Router>
     </div>
   );

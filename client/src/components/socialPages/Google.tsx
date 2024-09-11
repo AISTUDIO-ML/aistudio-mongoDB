@@ -1,11 +1,13 @@
 // import React from 'react';
-import { auth, GoogleAuthProvider } from '../../firebase';
-import { signInWithPopup, OAuthCredential } from 'firebase/auth';
+import { auth, GoogleAuthProvider } from "../../firebase";
+import { signInWithPopup, OAuthCredential } from "firebase/auth";
 import { useUserStore } from "../../store/user";
 import { AiFillGoogleCircle } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 const GoogleSignIn = () => {
   const setUser = useUserStore((state: any) => state.setUser);
+  const navigate = useNavigate();
 
   const handleSignIn = () => {
     const provider = new GoogleAuthProvider();
@@ -18,22 +20,24 @@ const GoogleSignIn = () => {
           const token = credential.accessToken;
           // The signed-in user info.
           const user = result.user;
-          console.log('Access Token:', token);
-          console.log('User:', user);
+          console.log("Access Token:", token);
+          console.log("User:", user);
           localStorage.setItem("token", JSON.stringify(token));
           setUser({ token: token });
-          } else {
-          console.log('No credentials provided by the sign in operation.');
+          navigate("/");
+        } else {
+          console.log("No credentials provided by the sign in operation.");
         }
-      }).catch((error) => {
+      })
+      .catch((error) => {
         // Handle Errors here.
         const errorCode = error.code;
         const errorMessage = error.message;
         // The email of the user's account used.
         const email = error.email;
-        console.error('Error Code:', errorCode);
-        console.error('Error Message:', errorMessage);
-        console.error('Email associated with the error:', email);
+        console.error("Error Code:", errorCode);
+        console.error("Error Message:", errorMessage);
+        console.error("Email associated with the error:", email);
       });
   };
 
