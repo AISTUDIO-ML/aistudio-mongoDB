@@ -6,7 +6,7 @@ module.exports = {
     extend: {
       colors: {
         background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        foreground: "hsla(var(--foreground))",
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
@@ -16,12 +16,12 @@ module.exports = {
           foreground: "hsl(var(--popover-foreground))",
         },
         primary: {
-          DEFAULT: "hsl(var(--primary))",
+          DEFAULT: "hsla(var(--primary))",
           background: "hsla(var(--primary-background))",
-          foreground: "hsl(var(--primary-foreground))",
+          foreground: "hsla(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
+          DEFAULT: "hsla(var(--secondary))",
           background: "hsla(var(--secondary-background))",
           foreground: "hsl(var(--secondary-foreground))",
         },

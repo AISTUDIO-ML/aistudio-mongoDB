@@ -1,15 +1,15 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
+import { DashboardHeader } from "./Header/DashboardHeader";
+import { Sidebar } from "./Sidebar/Sidebar";
 
 export const DashboardLayout = ({ children }: { children: ReactNode }) => {
+  const [isOpen, setIsOpen] = useState<Boolean>(true);
+
   return (
     <main className="relative">
-      <aside className="fixed top-0 left-0 bottom-0 w-[300px] shadow-xl bg-primary-background">
-        sidebar
-      </aside>
-      <section className="ml-[300px]">
-        <header className="sticky top-0 py-3 px-6 flex justify-between bg-primary-background">
-          header
-        </header>
+      <Sidebar setIsOpen={setIsOpen} isOpen={isOpen} />
+      <section className={`${isOpen ? "ml-[300px]" : "ml-[70px]"}`}>
+        <DashboardHeader />
 
         {children}
       </section>

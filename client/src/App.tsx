@@ -1,20 +1,20 @@
 // import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import "./components/style.css";
-import Login from "./components/login/Login";
-import SignUp from "./components/signup/SignUp";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Hosting from "./components/hosting/Hosting";
+import Login from "./components/login/Login";
 import PricingTable from "./components/pricingTable/PricingTable";
+import SignUp from "./components/signup/SignUp";
+import "./components/style.css";
 // import { useUserStore } from "./store/user";
 import ForgotLink from "./components/forgotPassword/ForgotLink";
 import ResetPassword from "./components/forgotPassword/ResetPassword";
-import Google from "./components/socialPages/Google";
+import AuthLayout from "./components/layouts/AuthLayout";
+import { DashboardLayout } from "./components/layouts/Dashboard";
 import Github from "./components/socialPages/Github";
+import Google from "./components/socialPages/Google";
 import Microsoft from "./components/socialPages/Microsoft";
 import VerifyEmail from "./components/verify/VerifyEmail";
-import AuthLayout from "./components/layouts/AuthLayout";
 import ProtectedRoute from "./router/ProtectedRoute";
-import { DashboardLayout } from "./components/layouts/Dashboard";
 
 function App() {
   // const user = useUserStore((state: any) => state.user);
