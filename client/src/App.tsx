@@ -16,6 +16,8 @@ import VerifyEmail from "./components/verify/VerifyEmail";
 import { Dashboard } from "./pages/Dashboard";
 import { Groups } from "./pages/Groups";
 import { Home } from "./pages/Home";
+import { Integration } from "./pages/Integration";
+import { Setting } from "./pages/Setting";
 import ProtectedRoute from "./router/ProtectedRoute";
 
 function App() {
@@ -64,6 +66,22 @@ function App() {
             element={
               <DashboardLayout>
                 <Groups />
+              </DashboardLayout>
+            }
+          />
+          <Route
+            path="/integration"
+            element={
+              <DashboardLayout>
+                <Integration />
+              </DashboardLayout>
+            }
+          />
+          <Route
+            path="/setting"
+            element={
+              <DashboardLayout>
+                <Setting />
               </DashboardLayout>
             }
           />

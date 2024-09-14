@@ -46,7 +46,7 @@ export const Dashboard = () => {
   const [date, setDate] = useState<any>(new Date());
   return (
     <section className="p-5">
-      <div className="container">
+      <div className="container mx-auto">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>

@@ -8,7 +8,7 @@ module.exports = {
         background: "hsl(var(--background))",
         foreground: "hsla(var(--foreground))",
         card: {
-          DEFAULT: "hsl(var(--card))",
+          DEFAULT: "hsla(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
         popover: {
@@ -46,7 +46,7 @@ module.exports = {
           foreground: "hsl(var(--accent-foreground))",
         },
         destructive: {
-          DEFAULT: "hsl(var(--destructive))",
+          DEFAULT: "hsla(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
         border: "hsl(var(--border))",

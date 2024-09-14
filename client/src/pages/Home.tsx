@@ -23,7 +23,7 @@ import {
 export const Home = () => {
   return (
     <section className="p-5">
-      <div className="container">
+      <div className="container mx-auto">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -244,18 +244,21 @@ export const Home = () => {
           </div>
         </div>
         <div className=" mt-4">
-          <Accordion type="single" collapsible>
+          <Accordion type="single" collapsible defaultValue="item-1">
             <AccordionItem value="item-1">
               <AccordionTrigger className="text-xl text-ternary font-light">
                 Pending Approval Requests{" "}
               </AccordionTrigger>
               <AccordionContent className="bg-white">
-                <div className="flex items-center justify-center py-16">
+                <div className="flex items-center flex-col justify-center py-16">
                   <img
-                    src="/assets/images/no_request.png"
+                    src="/assets/svgs/no_item.svg"
                     alt="no request"
                     className="aspect-video h-24"
                   />
+                  <p className="text-foreground mt-3">
+                    No Pending Approvel Request
+                  </p>
                 </div>
               </AccordionContent>
             </AccordionItem>

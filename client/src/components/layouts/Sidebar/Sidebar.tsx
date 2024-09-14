@@ -10,7 +10,7 @@ export const Sidebar = ({
 }) => {
   return (
     <aside
-      className={`fixed top-0 left-0 bottom-0  shadow-xl bg-primary-background overflow-hidden py-2 ${
+      className={`fixed top-0 left-0 bottom-0  shadow-xl bg-primary-background  py-2 ${
         isOpen ? "w-[300px] px-6" : "w-[70px] px-3 "
       }`}
     >
@@ -29,7 +29,7 @@ export const Sidebar = ({
         <button
           onClick={() => setIsOpen(!isOpen)}
           className={`${
-            isOpen ? "static" : "absolute top-12 z-50 right-3 rotate-180 "
+            isOpen ? "static" : "absolute top-12 z-50 -right-3 rotate-180 "
           }`}
         >
           <img src="/assets/svgs/back.svg" alt="back" className="w-6 h-6" />
