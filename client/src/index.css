@@ -76,6 +76,8 @@ p, li { color: #383874; font-family: 'Poppins', sans-serif; font-size: 16px; fon
     --primary-background: 0 0% 100%;
     --primary-foreground: 227, 59%, 48%;
     --secondary: 0, 0%, 37%;
+    --ternary: 240, 35%, 34%;
+    --dark: 0, 0%, 0%;
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -92,6 +94,8 @@ p, li { color: #383874; font-family: 'Poppins', sans-serif; font-size: 16px; fon
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --green: 133, 100%, 36%;
+    --btn-primary: 247, 100%, 73%;
   }
   .dark {
     --background: 222.2 84% 4.9%;

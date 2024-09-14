@@ -25,9 +25,21 @@ module.exports = {
           background: "hsla(var(--secondary-background))",
           foreground: "hsl(var(--secondary-foreground))",
         },
+        ternary: {
+          DEFAULT: "hsla(var(--ternary))",
+        },
+        dark: {
+          DEFAULT: "hsla(var(--dark))",
+        },
+        green: {
+          DEFAULT: "hsla(var(--green))",
+        },
+        btn_primary: {
+          DEFAULT: "hsla(var(--btn-primary))",
+        },
         muted: {
           DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          foreground: "hsla(var(--muted-foreground))",
         },
         accent: {
           DEFAULT: "hsl(var(--accent))",
@@ -47,6 +59,20 @@ module.exports = {
           4: "hsl(var(--chart-4))",
           5: "hsl(var(--chart-5))",
         },
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },

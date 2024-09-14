@@ -11,7 +11,7 @@ export const DashboardHeader = () => {
   return (
     <header className="sticky top-0 py-3 px-6 flex justify-between bg-primary-background">
       <div className="flex items-center rounded-md pl-10 relative bg-background h-auto">
-        <div className="px-2 shadow-md rounded-tr-md rounded-br-md h-full absolute left-0 bg-white top-0 flex items-center">
+        <div className="px-2 shadow-md rounded-md h-full absolute left-0 bg-white top-0 flex items-center">
           <img
             src="/assets/svgs/account.svg"
             alt="account"
@@ -19,8 +19,11 @@ export const DashboardHeader = () => {
           />
         </div>
         <Select>
-          <SelectTrigger className=" rounded-none  items-start h-auto text-primary-foreground uppercase bg-transparent border-none">
-            <SelectValue placeholder="Tech Savy" className="block " />
+          <SelectTrigger className=" rounded-none  h-auto text-primary-foreground uppercase bg-transparent border-none ">
+            <p className="text-start tracking-normal leading-normal">
+              Tech Savy <br />
+              <span className="text-[9px]">Account Administrator</span>
+            </p>
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>

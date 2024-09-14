@@ -1,10 +1,9 @@
 // import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Hosting from "./components/hosting/Hosting";
 import Login from "./components/login/Login";
 import PricingTable from "./components/pricingTable/PricingTable";
 import SignUp from "./components/signup/SignUp";
-import "./components/style.css";
+// import "./components/style.css";
 // import { useUserStore } from "./store/user";
 import ForgotLink from "./components/forgotPassword/ForgotLink";
 import ResetPassword from "./components/forgotPassword/ResetPassword";
@@ -14,6 +13,9 @@ import Github from "./components/socialPages/Github";
 import Google from "./components/socialPages/Google";
 import Microsoft from "./components/socialPages/Microsoft";
 import VerifyEmail from "./components/verify/VerifyEmail";
+import { Dashboard } from "./pages/Dashboard";
+import { Groups } from "./pages/Groups";
+import { Home } from "./pages/Home";
 import ProtectedRoute from "./router/ProtectedRoute";
 
 function App() {
@@ -45,7 +47,23 @@ function App() {
             path="/"
             element={
               <DashboardLayout>
-                <Hosting />
+                <Home />
+              </DashboardLayout>
+            }
+          />
+          <Route
+            path="/dashboard"
+            element={
+              <DashboardLayout>
+                <Dashboard />
+              </DashboardLayout>
+            }
+          />
+          <Route
+            path="/group"
+            element={
+              <DashboardLayout>
+                <Groups />
               </DashboardLayout>
             }
           />
