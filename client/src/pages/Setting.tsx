@@ -46,7 +46,7 @@ export const Setting = () => {
         </Breadcrumb>
         <div className="mt-5">
           <div className="flex items-center justify-between">
-            <h2 className="text-[42px] text-ternary flex items-center gap-2 font-light mb-3">
+            <h2 className="text-[42px] flex items-center gap-2 font-light mb-3">
               Account settings
             </h2>
             <div className="flex items-center gap-5">

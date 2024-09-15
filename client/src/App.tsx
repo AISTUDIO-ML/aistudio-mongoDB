@@ -26,23 +26,6 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Auth Routes */}
-        <Route element={<AuthLayout />}>
-          <Route path="/signin" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/forgot-password" element={<ForgotLink />} />
-          <Route path="/reset-password/:token" element={<ResetPassword />} />
-          <Route path="/verify/:token" element={<VerifyEmail />} />
-          <Route path="/auth/google-callback" element={<Google />} />
-          <Route path="/auth/github-callback" element={<Github />} />
-          <Route path="/auth/microsoft-callback" element={<Microsoft />} />
-
-          <Route
-            path="*"
-            element={<h1 className="text-center my-5">Page Not Found!</h1>}
-          />
-        </Route>
-
         {/* Logged in Routes */}
         <Route element={<ProtectedRoute />}>
           <Route
@@ -101,6 +84,23 @@ function App() {
                 <h1 className="text-center my-5">Page Not Found!</h1>
               </DashboardLayout>
             }
+          />
+        </Route>
+
+        {/* Auth Routes */}
+        <Route element={<AuthLayout />}>
+          <Route path="/signin" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/forgot-password" element={<ForgotLink />} />
+          <Route path="/reset-password/:token" element={<ResetPassword />} />
+          <Route path="/verify/:token" element={<VerifyEmail />} />
+          <Route path="/auth/google-callback" element={<Google />} />
+          <Route path="/auth/github-callback" element={<Github />} />
+          <Route path="/auth/microsoft-callback" element={<Microsoft />} />
+
+          <Route
+            path="*"
+            element={<h1 className="text-center my-5">Page Not Found!</h1>}
           />
         </Route>
       </Routes>

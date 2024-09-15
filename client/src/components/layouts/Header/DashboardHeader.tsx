@@ -1,3 +1,4 @@
+import { ModeToggle } from "@/components/ui/ModeToggle";
 import {
   Select,
   SelectContent,
@@ -9,7 +10,7 @@ import {
 
 export const DashboardHeader = () => {
   return (
-    <header className="sticky top-0 py-3 px-6 flex justify-between bg-primary-background">
+    <header className="sticky top-0 py-3 z-10 px-6 flex justify-between bg-primary-background">
       <div className="flex items-center rounded-md pl-10 relative bg-background h-auto">
         <div className="px-2 shadow-md rounded-md h-full absolute left-0 bg-white top-0 flex items-center">
           <img
@@ -33,6 +34,8 @@ export const DashboardHeader = () => {
         </Select>
       </div>
       <div className="flex items-center gap-3">
+        <ModeToggle />
+
         <button>
           <img src="/assets/svgs/bell.svg" alt="bell" className="w-6 h-6" />
         </button>
@@ -47,7 +50,7 @@ export const DashboardHeader = () => {
           />
         </button>
         <Select>
-          <SelectTrigger className=" bg-transparent border-none w-auto text-secondary text-sm">
+          <SelectTrigger className=" bg-transparent border-none w-auto text-secondary dark:text-foreground text-sm">
             <SelectValue placeholder="Vladimir Lialine" />
           </SelectTrigger>
           <SelectContent>

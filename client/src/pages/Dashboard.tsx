@@ -141,15 +141,19 @@ export const Dashboard = () => {
               <div className="flex items-center justify-between mt-2">
                 <div className="flex items-center gap-1">
                   <span className="p-1 aspect-square rounded-full bg-primary"></span>
-                  <p className="text-[10px] text-dark">0 Cloud Connections</p>
+                  <p className="text-[10px] text-foreground">
+                    0 Cloud Connections
+                  </p>
                 </div>
                 <div className="flex items-center gap-1">
                   <span className="p-1 aspect-square rounded-full bg-primary"></span>
-                  <p className="text-[10px] text-dark">0 DSM Generic Apps</p>
+                  <p className="text-[10px] text-foreground">
+                    0 DSM Generic Apps
+                  </p>
                 </div>
               </div>
               <div className="mt-10">
-                <p className="text-[10px] text-dark">Cloud Connections</p>
+                <p className="text-[10px] text-foreground">Cloud Connections</p>
                 <div className="flex items-center gap-3">
                   <p className="text-primary text-[10px]">0</p>
                   <p className="text-primary text-[10px]">0</p>

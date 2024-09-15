@@ -63,7 +63,7 @@ export const Home = () => {
               <CardHeader>
                 <CardTitle className="flex items-center gap-5">
                   <img src="/assets/svgs/lucide_home.svg" alt="welcome" />{" "}
-                  <span className="font-normal text-sm text-dark">
+                  <span className="font-normal text-sm text-foreground">
                     Welcome, Vladimir Lialine!
                   </span>
                 </CardTitle>
@@ -79,7 +79,7 @@ export const Home = () => {
                   >
                     <div className="flex items-center gap-3">
                       <span className="p-1 bg-primary/20  aspect-square rounded-full group-hover:bg-primary"></span>
-                      <p className="text-xs text-dark">
+                      <p className="text-xs text-foreground">
                         Getting started with DSM
                         <br />
                         <span className="text-[10px] text-foreground/80">
@@ -100,7 +100,7 @@ export const Home = () => {
                   >
                     <div className="flex items-center gap-3">
                       <span className="p-1 bg-primary/20  aspect-square rounded-full group-hover:bg-primary"></span>
-                      <p className="text-xs text-dark">
+                      <p className="text-xs text-foreground">
                         What’s New with DSM
                         <br />
                         <span className="text-[10px] text-foreground/80">
@@ -121,7 +121,7 @@ export const Home = () => {
                   >
                     <div className="flex items-center gap-3">
                       <span className="p-1 bg-primary/20  aspect-square rounded-full group-hover:bg-primary"></span>
-                      <p className="text-xs text-dark">
+                      <p className="text-xs text-foreground">
                         Training and Certification
                         <br />
                         <span className="text-[10px] text-foreground/80">
@@ -226,7 +226,7 @@ export const Home = () => {
                       alt="welcome"
                       className="h-3 w-3"
                     />{" "}
-                    <span className="font-normal text-sm text-dark">
+                    <span className="font-normal text-sm text-foreground">
                       Connect with our help center
                     </span>
                   </CardTitle>
@@ -246,10 +246,10 @@ export const Home = () => {
         <div className=" mt-4">
           <Accordion type="single" collapsible defaultValue="item-1">
             <AccordionItem value="item-1">
-              <AccordionTrigger className="text-xl text-ternary font-light">
+              <AccordionTrigger className="text-xl text-ternary dark:text-foreground font-light">
                 Pending Approval Requests{" "}
               </AccordionTrigger>
-              <AccordionContent className="bg-white">
+              <AccordionContent className="bg-card">
                 <div className="flex items-center flex-col justify-center py-16">
                   <img
                     src="/assets/svgs/no_item.svg"

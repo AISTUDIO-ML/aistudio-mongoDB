@@ -7,16 +7,17 @@ import reportWebVitals from "./reportWebVitals";
 // React Toastify
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { ThemeProvider } from "./providers/ThemeProvider";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   // <React.StrictMode>
-  <>
+  <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
     <App />
     <ToastContainer />
-  </>
+  </ThemeProvider>
   // </React.StrictMode>
 );
 

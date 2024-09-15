@@ -47,7 +47,7 @@ export const Authentication = () => {
           password
         </p>
         <div className="flex space-x-2">
-          <Checkbox id="terms" />
+          <Checkbox id="terms" className="mt-2.5" />
           <label htmlFor="terms" className="text-2xl font-normal ">
             <span className="leading-none">
               Mandatory two-factor authentication for all team members
