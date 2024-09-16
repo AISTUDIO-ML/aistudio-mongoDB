@@ -106,11 +106,16 @@ export const ForgotPassword = () => {
               </form>
             </div>
           </div>
-          <div className="col-span-3 rounded-lg overflow-hidden my-4">
+          <div className="col-span-3  overflow-hidden my-2">
             <img
               src="/assets/images/banner.png"
               alt="banner"
-              className="h-full w-full "
+              className=" w-full rounded-lg"
+            />
+            <img
+              src="/assets/svgs/honeypotz.svg"
+              alt="banner"
+              className=" h-10 ml-auto mt-2"
             />
           </div>
         </div>

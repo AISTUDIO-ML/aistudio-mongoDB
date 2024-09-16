@@ -2,12 +2,13 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { Login } from "./components/auth/Login";
 import PricingTable from "./components/pricingTable/PricingTable";
-import SignUp from "./components/signup/SignUp";
 // import "./components/style.css";
 // import { useUserStore } from "./store/user";
 import { ForgotPassword } from "./components/auth/ForgotPassword";
 
-import ResetPassword from "./components/forgotPassword/ResetPassword";
+import { Signup } from "./components/auth/signup/Signup";
+// import ResetPassword from "./components/forgotPassword/ResetPassword";
+import { ResetPassword } from "./components/auth/ResetPassword";
 import AuthLayout from "./components/layouts/AuthLayout";
 import { DashboardLayout } from "./components/layouts/Dashboard";
 import Github from "./components/socialPages/Github";
@@ -91,7 +92,7 @@ function App() {
         {/* Auth Routes */}
         <Route element={<AuthLayout />}>
           <Route path="/signin" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password/:token" element={<ResetPassword />} />
           <Route path="/verify/:token" element={<VerifyEmail />} />

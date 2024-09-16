@@ -108,7 +108,7 @@ p, li { color: #383874; font-family: 'Poppins', sans-serif; font-size: 16px; fon
     --primary-background: 240 35% 34%;
     --primary-foreground: 227, 59%, 48%;
     --secondary: 0, 0%, 37%;
-    --ternary: 240, 35%, 34%;
+    --ternary: 0, 0%, 100%;
     --dark: 0, 0%, 0%;
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 210 40% 96.1%;

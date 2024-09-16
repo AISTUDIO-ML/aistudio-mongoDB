@@ -6,14 +6,13 @@ import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import * as Yup from "yup";
 import { useUserStore } from "../../store/user";
-import login from "../assets/images/splash.png";
-
-import HoneyPotz from "../HoneyPotz";
-import Header from "../header/Header_backup";
+import { Header } from "../layouts/Header/Header";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
 
 const baseUrl = "https://demoapp.fuzonmedia.com";
 
-const ResetPassword = () => {
+export const ResetPassword = () => {
   const navigate = useNavigate();
   const params = useParams();
 
@@ -21,13 +20,13 @@ const ResetPassword = () => {
   const setUser = useUserStore((state: any) => state.setUser);
   //   Removing white space through jquery
   useEffect(() => {
-    $("input#space").on({
+    $("Input#space").on({
       keydown: function (e: any) {
         if (e.which === 32) return false;
       },
       change: function (e: any) {
-        const inputElement = e.target as HTMLInputElement;
-        inputElement.value = inputElement.value.replace(/\s/g, "");
+        const InputElement = e.target as HTMLInputElement;
+        InputElement.value = InputElement.value.replace(/\s/g, "");
         // this.value = this.value.replace(/\s/g, "");
       },
     });
@@ -78,22 +77,22 @@ const ResetPassword = () => {
           });
       },
     });
-
   return (
-    <>
-      <Header />
-      <section className="main">
-        <div className="row">
-          <div className="col">
-            <div className="login">
-              <h1>Reset your Password</h1>
+    <main>
+      <div className="container mx-auto">
+        <Header />
 
+        <div className="grid grid-cols-5 h-[calc(100vh-100px)] py-4 gap-5">
+          <div className="flex items-start justify-center h-full w-full flex-col col-span-2">
+            <div className="w-3/4">
+              <h1 className="text-ternary font-semibold text-5xl mb-5">
+                Reset your Password
+              </h1>
               <form onSubmit={handleSubmit}>
-                <div className="form-group">
+                <div className="flex flex-col gap-2 mb-3 text-sm">
                   <label>Password</label>
-                  <input
+                  <Input
                     type="password"
-                    className="form-control"
                     placeholder="Type Here"
                     name="password"
                     value={values.password}
@@ -103,14 +102,16 @@ const ResetPassword = () => {
                   />
 
                   {errors.password && touched.password ? (
-                    <span className="err_msg"> {errors.password} </span>
+                    <span className="text-red-500 text-xs">
+                      {" "}
+                      {errors.password}{" "}
+                    </span>
                   ) : null}
                 </div>
-                <div className="form-group">
+                <div className="flex flex-col gap-2 mb-3 text-sm">
                   <label>Confirm Password</label>
-                  <input
+                  <Input
                     type="password"
-                    className="form-control"
                     placeholder="Type Here"
                     name="confirmPassword"
                     value={values.confirmPassword}
@@ -120,30 +121,36 @@ const ResetPassword = () => {
                   />
 
                   {errors.confirmPassword && touched.confirmPassword ? (
-                    <span className="err_msg"> {errors.confirmPassword} </span>
+                    <span className="text-red-500 text-xs">
+                      {" "}
+                      {errors.confirmPassword}{" "}
+                    </span>
                   ) : null}
                 </div>
-                <button
+                <Button
                   disabled={loading}
                   type="submit"
-                  className="btn btn-primary tpspc"
+                  className="rounded-full px-10 "
                 >
                   Reset
-                </button>
+                </Button>
               </form>
             </div>
           </div>
-
-          <div className="col">
-            <div className="splash">
-              <img src={login} alt="" />
-            </div>
+          <div className="col-span-3  overflow-hidden my-2">
+            <img
+              src="/assets/images/banner.png"
+              alt="banner"
+              className=" w-full rounded-lg"
+            />
+            <img
+              src="/assets/svgs/honeypotz.svg"
+              alt="banner"
+              className=" h-10 ml-auto mt-2"
+            />
           </div>
         </div>
-      </section>
-      <HoneyPotz />
-    </>
+      </div>
+    </main>
   );
 };
-
-export default ResetPassword;

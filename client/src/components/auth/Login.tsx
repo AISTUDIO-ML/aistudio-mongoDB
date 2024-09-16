@@ -88,7 +88,7 @@ export const Login = () => {
         <div className="grid grid-cols-5 h-[calc(100vh-100px)] py-4 gap-5">
           <div className="flex items-start justify-center h-full w-full flex-col col-span-2">
             <div className="lg:w-3/4 w-full">
-              <h1 className="text-primary-foreground text-3xl mt-3">
+              <h1 className="text-ternary font-semibold text-3xl mt-3">
                 Log in to
                 <br /> your account
               </h1>
@@ -185,11 +185,16 @@ export const Login = () => {
               </div>
             </div>
           </div>
-          <div className="col-span-3 rounded-lg overflow-hidden my-4">
+          <div className="col-span-3 overflow-hidden my-2">
             <img
               src="/assets/images/banner.png"
               alt="banner"
-              className="h-full w-full "
+              className=" w-full rounded-lg"
+            />
+            <img
+              src="/assets/svgs/honeypotz.svg"
+              alt="banner"
+              className=" h-10 ml-auto mt-2"
             />
           </div>
         </div>
