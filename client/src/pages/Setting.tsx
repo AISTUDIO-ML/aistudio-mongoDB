@@ -20,7 +20,7 @@ export const Setting = () => {
       case "AUTHENTICATION":
         return <Authentication />;
       default:
-        return;
+        return <>Not found</>;
     }
   }, [activeTab]);
   return (

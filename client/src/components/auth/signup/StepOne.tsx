@@ -47,7 +47,7 @@ export const StepOne = ({
     });
   return (
     <>
-      <h1 className="text-ternary font-semibold text-5xl mb-5">
+      <h1 className="text-ternary font-semibold lg:text-5xl text-3xl mb-5">
         Create a new account
       </h1>
       <form onSubmit={handleSubmit}>

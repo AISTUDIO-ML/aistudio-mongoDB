@@ -50,22 +50,24 @@ export const VerifyEmail = () => {
   return (
     <>
       <Header />
-      <div
-        className="text-center text-2xl text-ternary font-medium mt-7"
-        style={{ marginTop: "15%" }}
-      >
-        Check your Inbox for verification.
-      </div>
-      <div className="text-center mt-3">
-        <Hourglass
-          visible={true}
-          height="80"
-          width="80"
-          ariaLabel="hourglass-loading"
-          wrapperStyle={{}}
-          wrapperClass="mx-auto"
-          colors={["#306cce", "#72a1ed"]}
-        />
+      <div className="container mx-auto px-5">
+        <div
+          className="text-center text-2xl text-ternary font-medium mt-7"
+          style={{ marginTop: "15%" }}
+        >
+          Check your Inbox for verification.
+        </div>
+        <div className="text-center mt-3">
+          <Hourglass
+            visible={true}
+            height="80"
+            width="80"
+            ariaLabel="hourglass-loading"
+            wrapperStyle={{}}
+            wrapperClass="mx-auto"
+            colors={["#306cce", "#72a1ed"]}
+          />
+        </div>
       </div>
     </>
   );

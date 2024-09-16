@@ -71,12 +71,12 @@ export const ForgotPassword = () => {
     });
   return (
     <section className="bg-background ">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-5">
         <Header />
-        <div className="grid grid-cols-5 gap-5 h-[calc(100vh-100px)] py-4">
-          <div className="col-span-2 h-full lg:w-3/4 w-full">
+        <div className="grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 gap-5 h-[calc(100vh-100px)] py-4">
+          <div className="lg:col-span-2 col-span-1 md:max-w-full max-w-[450px] mx-auto h-full md:w-3/4 w-full">
             <div className="flex flex-col justify-center items-start h-full">
-              <h1 className="text-primary-foreground text-5xl font-semibold">
+              <h1 className="text-primary-foreground lg:text-5xl text-3xl font-semibold">
                 Enter your Email
               </h1>
 
@@ -106,11 +106,11 @@ export const ForgotPassword = () => {
               </form>
             </div>
           </div>
-          <div className="col-span-3  overflow-hidden my-2">
+          <div className="lg:col-span-3 col-span-1 md:block hidden overflow-hidden my-2">
             <img
               src="/assets/images/banner.png"
               alt="banner"
-              className=" w-full rounded-lg"
+              className=" w-full rounded-lg h-[calc(100%-50px)]"
             />
             <img
               src="/assets/svgs/honeypotz.svg"
