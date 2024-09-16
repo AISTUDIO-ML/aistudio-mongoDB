@@ -1,9 +1,8 @@
 import { useEffect } from "react";
-import axios from "axios";
-import { useParams, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
-import Header from "../header/Header";
 import { Hourglass } from "react-loader-spinner";
+import { useNavigate, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
+import Header from "../header/Header_backup";
 
 const baseUrl = "https://demoapp.fuzonmedia.com";
 
@@ -49,21 +48,25 @@ const VerifyEmail = () => {
     postVerifyEmail();
   }, []);
 
-  return <>
-    <Header/>
-    <div className="text-center mt-7" style={{marginTop: "15%"}}>Check your Inbox for verification.</div>
-    <div className="text-center mt-2">
-      <Hourglass
+  return (
+    <>
+      <Header />
+      <div className="text-center mt-7" style={{ marginTop: "15%" }}>
+        Check your Inbox for verification.
+      </div>
+      <div className="text-center mt-2">
+        <Hourglass
           visible={true}
           height="80"
           width="80"
           ariaLabel="hourglass-loading"
           wrapperStyle={{}}
           wrapperClass=""
-          colors={['#306cce', '#72a1ed']}
-          />
-    </div>
-  </>
+          colors={["#306cce", "#72a1ed"]}
+        />
+      </div>
+    </>
+  );
 };
 
 export default VerifyEmail;

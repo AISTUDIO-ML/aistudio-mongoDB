@@ -1,14 +1,14 @@
-import React, { useEffect } from "react";
-import login from "../assets/images/splash.png";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import Header from "../header/Header";
+import axios from "axios";
 import { useFormik } from "formik";
 import $ from "jquery";
-import * as Yup from "yup";
-import HoneyPotz from "../HoneyPotz";
-import axios from "axios";
+import React, { useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import * as Yup from "yup";
 import { useUserStore } from "../../store/user";
+import login from "../assets/images/splash.png";
+import Header from "../header/Header_backup";
+import HoneyPotz from "../HoneyPotz";
 
 const baseUrl = "https://demoapp.fuzonmedia.com";
 

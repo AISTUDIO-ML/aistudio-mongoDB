@@ -1,11 +1,12 @@
 // import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import { Login } from "./components/login/Login";
+import { Login } from "./components/auth/Login";
 import PricingTable from "./components/pricingTable/PricingTable";
 import SignUp from "./components/signup/SignUp";
 // import "./components/style.css";
 // import { useUserStore } from "./store/user";
-import ForgotLink from "./components/forgotPassword/ForgotLink";
+import { ForgotPassword } from "./components/auth/ForgotPassword";
+
 import ResetPassword from "./components/forgotPassword/ResetPassword";
 import AuthLayout from "./components/layouts/AuthLayout";
 import { DashboardLayout } from "./components/layouts/Dashboard";
@@ -91,7 +92,7 @@ function App() {
         <Route element={<AuthLayout />}>
           <Route path="/signin" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/forgot-password" element={<ForgotLink />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password/:token" element={<ResetPassword />} />
           <Route path="/verify/:token" element={<VerifyEmail />} />
           <Route path="/auth/google-callback" element={<Google />} />

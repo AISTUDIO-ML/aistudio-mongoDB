@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import login from "../assets/images/splash.png";
-import { Link } from "react-router-dom";
-import Header from "../header/Header";
 import { useFormik } from "formik";
-import { SignUpFormSchema } from "./SignUpFormSchema";
 import $ from "jquery";
+import { useEffect, useState } from "react";
+import login from "../assets/images/splash.png";
+
 import HoneyPotz from "../HoneyPotz";
+import { SignUpFormSchema } from "./SignUpFormSchema";
 // import {createUser} from '../service'
+import { Header } from "../layouts/Header/Header";
 import MoreSteps from "./MoreSteps";
 
 function SignUp() {

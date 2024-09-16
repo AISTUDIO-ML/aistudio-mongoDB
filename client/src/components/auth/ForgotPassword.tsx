@@ -1,17 +1,15 @@
-import React, { useEffect, useState } from "react";
-import login from "../assets/images/splash.png";
-
 import axios from "axios";
 import { useFormik } from "formik";
-import $ from "jquery";
+import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import * as Yup from "yup";
-import HoneyPotz from "../HoneyPotz";
 import { Header } from "../layouts/Header/Header";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
 
 const baseUrl = "https://demoapp.fuzonmedia.com";
 
-const ForgotLink = () => {
+export const ForgotPassword = () => {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = React.useState(false);
 
@@ -70,55 +68,49 @@ const ForgotLink = () => {
           });
       },
     });
-
   return (
-    <>
-      <Header />
-      <section className="main">
-        <div className="row">
-          <div className="col">
-            <div className="login">
-              <h1>Enter your Email</h1>
+    <section className="bg-background ">
+      <div className="container mx-auto">
+        <Header />
+        <div className="grid grid-cols-5 gap-5 h-[calc(100vh-100px)] py-4">
+          <div className="col-span-2 h-full pr-10 w-full">
+            <div className="flex flex-col justify-center items-start h-full">
+              <h1 className="text-primary-foreground text-5xl font-semibold">
+                Enter your Email
+              </h1>
 
-              <form onSubmit={handleSubmit}>
-                <div className="form-group">
+              <form className="w-full" onSubmit={handleSubmit}>
+                <div className="flex flex-col items-start justify-start gap-3 w-full my-4">
                   <label>Email</label>
-                  <input
-                    type="text"
-                    className="form-control"
+                  <Input
                     placeholder="Type Here"
                     name="email"
+                    id="space"
+                    className="w-full"
                     value={values.email}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    id="space"
                   />
                   {errors.email && touched.email ? (
-                    <span className="err_msg"> {errors.email} </span>
+                    <span className="text-red-500"> {errors.email} </span>
                   ) : null}
                 </div>
 
-                <button
-                  disabled={loading}
-                  type="submit"
-                  className="btn btn-primary tpspc"
-                >
+                <Button type="submit" size={"lg"} className=" rounded-full">
                   Submit
-                </button>
+                </Button>
               </form>
             </div>
           </div>
-
-          <div className="col">
-            <div className="splash">
-              <img src={login} alt="" />
-            </div>
+          <div className="col-span-3 rounded-lg overflow-hidden my-4">
+            <img
+              src="/assets/images/banner.png"
+              alt="banner"
+              className="h-full w-full "
+            />
           </div>
         </div>
-      </section>
-      <HoneyPotz />
-    </>
+      </div>
+    </section>
   );
 };
-
-export default ForgotLink;

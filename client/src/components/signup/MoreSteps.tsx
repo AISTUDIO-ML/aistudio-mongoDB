@@ -1,15 +1,15 @@
-import React, { useEffect } from "react";
-import login from "../assets/images/splash.png";
-import { Link } from "react-router-dom";
-import Header from "../header/Header";
+import {
+  createUserWithEmailAndPassword,
+  sendEmailVerification,
+} from "firebase/auth";
 import { useFormik } from "formik";
-import { MoreStepSchema } from "./MoreStepSchema";
 import $ from "jquery";
-import HoneyPotz from "../HoneyPotz";
-import { toast } from "react-toastify";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { auth } from "../../firebase";
-import { createUserWithEmailAndPassword, sendEmailVerification } from 'firebase/auth';
+import login from "../assets/images/splash.png";
+import { MoreStepSchema } from "./MoreStepSchema";
 
 interface MoreStepsProps {
   collectedData: any;
@@ -58,45 +58,56 @@ const MoreSteps: React.FC<MoreStepsProps> = ({
         // Create User
         setLoading(true);
         try {
-        const userCredential = await createUserWithEmailAndPassword(auth, collectedData.email, collectedData.password);
-        console.log("++++++++++++++++", userCredential)
-        // alert(userCredential)
-        await sendEmailVerification(userCredential.user);
-        fetch(`${process.env.REACT_APP_API_URL}/users/signup`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            username: collectedData.name,
-            password: collectedData.password,
-            address: collectedData.address,
-            billing: collectedData.billing,
-            email: collectedData.email,
-            companyname: collectedData.companyname,
-            phone: collectedData.password,
-          }),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-            if (data.error) {
-              return toast.error(data.message);
-            }
-            toast.success("User Created Successfully Please Verify Your Email");
+          const userCredential = await createUserWithEmailAndPassword(
+            auth,
+            collectedData.email,
+            collectedData.password
+          );
+          console.log("++++++++++++++++", userCredential);
+          // alert(userCredential)
+          await sendEmailVerification(userCredential.user);
+          fetch(`${process.env.REACT_APP_API_URL}/users/signup`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              username: collectedData.name,
+              password: collectedData.password,
+              address: collectedData.address,
+              billing: collectedData.billing,
+              email: collectedData.email,
+              companyname: collectedData.companyname,
+              phone: collectedData.password,
+            }),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data);
+              if (data.error) {
+                return toast.error(data.message);
+              }
+              toast.success(
+                "User Created Successfully Please Verify Your Email"
+              );
 
-            alert('Verification email sent. Please check your email to verify your account.');
-            navigate("/verify/:token");
-          })
-          .catch((err) => {
-            toast.error("User Creation Failed");
-            console.log(err);
-          })
-          .finally(() => {
-            setLoading(false);
-          });
+              alert(
+                "Verification email sent. Please check your email to verify your account."
+              );
+              navigate("/verify/:token");
+            })
+            .catch((err) => {
+              toast.error("User Creation Failed");
+              console.log(err);
+            })
+            .finally(() => {
+              setLoading(false);
+            });
         } catch (error: any) {
-          console.error("Failed to create user and send verification email", error);
+          console.error(
+            "Failed to create user and send verification email",
+            error
+          );
           toast.error("Registration failed: " + error.message);
         }
       },

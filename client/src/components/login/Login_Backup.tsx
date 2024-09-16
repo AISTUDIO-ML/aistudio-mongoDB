@@ -1,23 +1,18 @@
-import React, { useEffect } from "react";
-import login from "../assets/images/splash.png";
-import { Link, useNavigate } from "react-router-dom";
-import Header from "../header/Header";
 import { useFormik } from "formik";
-import { LoginFormSchema } from "./LoginFormSchema";
 import $ from "jquery";
-import { logIn } from "../service";
+import React, { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { LoginFormSchema } from "../../schema/LoginFormSchema";
+import login from "../assets/images/splash.png";
 // import axios from 'axios';
-import { AiFillGoogleCircle, AiFillGithub } from "react-icons/ai";
-import { BsMicrosoft, BsFillShieldLockFill } from "react-icons/bs";
-import { FaUserTie } from "react-icons/fa";
-import lock from "../assets/images/2fa.png";
-import honeypotz1 from "../assets/images/honeypotz1.png";
-import HoneyPotz from "../HoneyPotz";
 import axios from "axios";
+import { BsFillShieldLockFill } from "react-icons/bs";
+import { FaUserTie } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { useUserStore } from "../../store/user";
-import GoogleSignIn from "../socialPages/Google";
+import HoneyPotz from "../HoneyPotz";
 import GithubSignIn from "../socialPages/Github";
+import GoogleSignIn from "../socialPages/Google";
 import MicrosoftSignIn from "../socialPages/Microsoft";
 
 const baseUrl = "http://localhost:8080";
@@ -85,7 +80,6 @@ const Login = () => {
 
   return (
     <>
-      <Header />
       <section className="main">
         <div className="row">
           <div className="col">
