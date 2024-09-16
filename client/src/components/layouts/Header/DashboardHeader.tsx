@@ -20,10 +20,12 @@ export const DashboardHeader = () => {
           />
         </div>
         <Select>
-          <SelectTrigger className=" rounded-none  h-auto text-primary-foreground uppercase bg-transparent border-none ">
-            <p className="text-start tracking-normal leading-normal">
+          <SelectTrigger className=" rounded-none  h-auto text-primary-foreground uppercase bg-transparent border-none gap-4">
+            <p className="text-start tracking-normal leading-4">
               Tech Savy <br />
-              <span className="text-[9px]">Account Administrator</span>
+              <span className="text-[9px] text-primary-foreground/70">
+                Account Administrator
+              </span>
             </p>
           </SelectTrigger>
           <SelectContent>

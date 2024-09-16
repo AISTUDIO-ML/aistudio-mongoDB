@@ -1,3 +1,4 @@
+import { IntegrationIcon } from "@/components/assets/svgs/integration";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -121,18 +122,24 @@ export const Integration = () => {
                       )}
                       onClick={() => setActiveTab("integration")}
                     >
-                      <img
-                        src="/assets/svgs/integration.svg"
-                        alt=""
-                        className="h-5 w-5 brightness-50"
+                      <IntegrationIcon
+                        className={cn(
+                          "h-5 w-5 ",
+                          activeTab === "integration"
+                            ? " stroke-primary"
+                            : " stroke-foreground/60"
+                        )}
                       />
                       <span className={cn(" text-sm")}>
                         All Integrations (15)
                       </span>
-                      <img
-                        src="/assets/svgs/integration.svg"
-                        alt=""
-                        className="h-5 w-5 brightness-50"
+                      <IntegrationIcon
+                        className={cn(
+                          "h-5 w-5 ",
+                          activeTab === "integration"
+                            ? " stroke-primary"
+                            : " stroke-foreground/60"
+                        )}
                       />
                     </button>
                     <button
@@ -144,18 +151,24 @@ export const Integration = () => {
                       )}
                       onClick={() => setActiveTab("active")}
                     >
-                      <img
-                        src="/assets/svgs/integration.svg"
-                        alt=""
-                        className="h-5 w-5 brightness-50"
+                      <IntegrationIcon
+                        className={cn(
+                          "h-5 w-5 ",
+                          activeTab === "active"
+                            ? " stroke-primary"
+                            : " stroke-foreground/60"
+                        )}
                       />
                       <span className={cn(" text-sm")}>
                         Active Integrations
                       </span>
-                      <img
-                        src="/assets/svgs/integration.svg"
-                        alt=""
-                        className="h-5 w-5 brightness-50"
+                      <IntegrationIcon
+                        className={cn(
+                          "h-5 w-5 ",
+                          activeTab === "active"
+                            ? " stroke-primary"
+                            : " stroke-foreground/60"
+                        )}
                       />
                     </button>
                     <button
@@ -167,16 +180,22 @@ export const Integration = () => {
                       )}
                       onClick={() => setActiveTab("other")}
                     >
-                      <img
-                        src="/assets/svgs/integration.svg"
-                        alt=""
-                        className="h-5 w-5 brightness-50"
+                      <IntegrationIcon
+                        className={cn(
+                          "h-5 w-5 ",
+                          activeTab === "other"
+                            ? " stroke-primary"
+                            : " stroke-foreground/60"
+                        )}
                       />
                       <span className={cn(" text-sm")}>Others (15)</span>
-                      <img
-                        src="/assets/svgs/integration.svg"
-                        alt=""
-                        className="h-5 w-5 brightness-50"
+                      <IntegrationIcon
+                        className={cn(
+                          "h-5 w-5 ",
+                          activeTab === "other"
+                            ? " stroke-primary"
+                            : " stroke-foreground/60"
+                        )}
                       />
                     </button>
                   </div>

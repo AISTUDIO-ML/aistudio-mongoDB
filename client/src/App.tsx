@@ -1,6 +1,6 @@
 // import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Login from "./components/login/Login";
+import { Login } from "./components/login/Login";
 import PricingTable from "./components/pricingTable/PricingTable";
 import SignUp from "./components/signup/SignUp";
 // import "./components/style.css";
