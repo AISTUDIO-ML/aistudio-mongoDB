@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useFormik } from "formik";
+import $ from "jquery";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import * as Yup from "yup";
@@ -73,7 +74,7 @@ export const ForgotPassword = () => {
       <div className="container mx-auto">
         <Header />
         <div className="grid grid-cols-5 gap-5 h-[calc(100vh-100px)] py-4">
-          <div className="col-span-2 h-full pr-10 w-full">
+          <div className="col-span-2 h-full lg:w-3/4 w-full">
             <div className="flex flex-col justify-center items-start h-full">
               <h1 className="text-primary-foreground text-5xl font-semibold">
                 Enter your Email
@@ -92,7 +93,10 @@ export const ForgotPassword = () => {
                     onBlur={handleBlur}
                   />
                   {errors.email && touched.email ? (
-                    <span className="text-red-500"> {errors.email} </span>
+                    <span className="text-red-500 text-xs">
+                      {" "}
+                      {errors.email}{" "}
+                    </span>
                   ) : null}
                 </div>
 

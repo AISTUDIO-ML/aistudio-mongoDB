@@ -1,7 +1,8 @@
-import { LoginFormSchema } from "@/schema/LoginFormSchema";
+import { LoginFormSchema } from "@/schemas/LoginFormSchema";
 import { useUserStore } from "@/store/user";
 import axios from "axios";
 import { useFormik } from "formik";
+import $ from "jquery";
 import React, { useEffect, useState } from "react";
 import {
   BsEyeFill,
@@ -18,8 +19,6 @@ import MicrosoftSignIn from "../socialPages/Microsoft";
 import { Button } from "../ui/button";
 import { Checkbox } from "../ui/checkbox";
 import { Input } from "../ui/input";
-
-const baseUrl = "https://demoapp.fuzonmedia.com";
 
 export const Login = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -88,58 +87,80 @@ export const Login = () => {
         <Header />
         <div className="grid grid-cols-5 h-[calc(100vh-100px)] py-4 gap-5">
           <div className="flex items-start justify-center h-full w-full flex-col col-span-2">
-            <div className="w-3/4">
-              <Link to={"/"}>
-                <img src="/assets/svgs/logo.svg" alt="logo" />
-              </Link>
+            <div className="lg:w-3/4 w-full">
               <h1 className="text-primary-foreground text-3xl mt-3">
-                Welcome to AIStudio
+                Log in to
+                <br /> your account
               </h1>
-              <p className="text-sm text-primary-foreground mt-1 mb-3">
-                Please sign-in to your account and start the adventure
-              </p>
-              <div className="flex flex-col gap-2 w-full mt-3">
-                <label className="text-sm">Email</label>
-                <Input placeholder="admin@aistudio.ml" />
-              </div>
-              <div className="flex flex-col gap-2 w-full mt-3">
-                <label className="text-sm">Password</label>
-                <div className="relative">
-                  <Input
-                    placeholder="admin"
-                    type={showPassword ? "text" : "password"}
-                  />
-                  {showPassword ? (
-                    <BsEyeFill
-                      className="absolute right-5 top-2/4 -translate-y-2/4"
-                      onClick={() => setShowPassword(false)}
-                    />
-                  ) : (
-                    <BsEyeSlashFill
-                      className="absolute right-5 top-2/4 -translate-y-2/4"
-                      onClick={() => setShowPassword(true)}
-                    />
-                  )}
-                </div>
-              </div>
 
-              <div className="flex items-center justify-between my-3 w-full">
-                <div className="flex items-center space-x-2">
-                  <Checkbox id="remember" />
-                  <label
-                    htmlFor="remember"
-                    className="text-sm  leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  >
-                    Remember Me
-                  </label>
+              <form onSubmit={handleSubmit}>
+                <div className="flex flex-col gap-2 w-full mt-3">
+                  <label className="text-sm">Email</label>
+                  <Input
+                    placeholder="admin@aistudio.ml"
+                    name="email"
+                    value={values.email}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    id="space"
+                  />
+                  {errors.email && touched.email ? (
+                    <span className="text-red-500 text-xs">
+                      {" "}
+                      {errors.email}{" "}
+                    </span>
+                  ) : null}
                 </div>
-                <Link to="/forgot-password" className="text-sm ">
-                  Forgot password?
-                </Link>
-              </div>
-              <Button type="submit" className="mt-2 w-full" size={"lg"}>
-                Log In
-              </Button>
+                <div className="flex flex-col gap-2 w-full mt-3">
+                  <label className="text-sm">Password</label>
+                  <div className="relative">
+                    <Input
+                      type={showPassword ? "text" : "password"}
+                      placeholder="Type Here"
+                      name="password"
+                      value={values.password}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      id="space"
+                    />
+                    {showPassword ? (
+                      <BsEyeFill
+                        className="absolute right-5 top-2/4 -translate-y-2/4"
+                        onClick={() => setShowPassword(false)}
+                      />
+                    ) : (
+                      <BsEyeSlashFill
+                        className="absolute right-5 top-2/4 -translate-y-2/4"
+                        onClick={() => setShowPassword(true)}
+                      />
+                    )}
+                  </div>
+                  {errors.password && touched.password ? (
+                    <span className="text-red-500 text-xs">
+                      {" "}
+                      {errors.password}{" "}
+                    </span>
+                  ) : null}
+                </div>
+
+                <div className="flex items-center justify-between my-3 w-full">
+                  <div className="flex items-center space-x-2">
+                    <Checkbox id="remember" />
+                    <label
+                      htmlFor="remember"
+                      className="text-sm  leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                    >
+                      Remember Me
+                    </label>
+                  </div>
+                  <Link to="/forgot-password" className="text-sm ">
+                    Forgot password?
+                  </Link>
+                </div>
+                <Button type="submit" className="mt-2 w-full" size={"lg"}>
+                  Log In
+                </Button>
+              </form>
               <p className="text-center text-sm my-4">
                 New on our platform?{" "}
                 <Link to={"/"} className="text-primary-foreground ml-2">

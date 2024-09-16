@@ -7,8 +7,9 @@ import { toast } from "react-toastify";
 import * as Yup from "yup";
 import { useUserStore } from "../../store/user";
 import login from "../assets/images/splash.png";
-import Header from "../header/Header_backup";
+
 import HoneyPotz from "../HoneyPotz";
+import Header from "../header/Header_backup";
 
 const baseUrl = "https://demoapp.fuzonmedia.com";
 
