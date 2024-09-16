@@ -14,7 +14,8 @@ import { DashboardLayout } from "./components/layouts/Dashboard";
 import Github from "./components/socialPages/Github";
 import Google from "./components/socialPages/Google";
 import Microsoft from "./components/socialPages/Microsoft";
-import VerifyEmail from "./components/verify/VerifyEmail";
+
+import { VerifyEmail } from "./components/auth/VerifyEmail";
 import { Dashboard } from "./pages/Dashboard";
 import { Groups } from "./pages/Groups";
 import { Home } from "./pages/Home";

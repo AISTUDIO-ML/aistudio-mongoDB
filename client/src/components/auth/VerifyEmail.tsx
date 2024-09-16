@@ -2,16 +2,16 @@ import { useEffect } from "react";
 import { Hourglass } from "react-loader-spinner";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
-import Header from "../header/Header_backup";
+import { Header } from "../layouts/Header/Header";
 
 const baseUrl = "https://demoapp.fuzonmedia.com";
 
-const VerifyEmail = () => {
+export const VerifyEmail = () => {
   const params = useParams();
 
   const navigate = useNavigate();
   const postVerifyEmail = async () => {
-    const t = JSON.parse(localStorage.getItem("token"));
+    const t = JSON.parse(localStorage.getItem("token") as any);
     console.log(t, "token");
     if (!t) {
       toast.error("Please login first");
@@ -47,26 +47,26 @@ const VerifyEmail = () => {
   useEffect(() => {
     postVerifyEmail();
   }, []);
-
   return (
     <>
       <Header />
-      <div className="text-center mt-7" style={{ marginTop: "15%" }}>
+      <div
+        className="text-center text-2xl text-ternary font-medium mt-7"
+        style={{ marginTop: "15%" }}
+      >
         Check your Inbox for verification.
       </div>
-      <div className="text-center mt-2">
+      <div className="text-center mt-3">
         <Hourglass
           visible={true}
           height="80"
           width="80"
           ariaLabel="hourglass-loading"
           wrapperStyle={{}}
-          wrapperClass=""
+          wrapperClass="mx-auto"
           colors={["#306cce", "#72a1ed"]}
         />
       </div>
     </>
   );
 };
-
-export default VerifyEmail;
